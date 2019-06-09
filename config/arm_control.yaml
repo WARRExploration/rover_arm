@@ -7,6 +7,7 @@ joint_state_controller:
 # Position Controllers ---------------------------------------
 # values based on dynamic tuning in RQT:
 # http://gazebosim.org/tutorials/?tut=ros_control
+# These configurations are used by ros_control
 
 arm_controller:
   type: effort_controllers/JointTrajectoryController

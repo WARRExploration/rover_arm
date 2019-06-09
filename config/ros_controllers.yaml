@@ -7,6 +7,7 @@ generic_hw_control_loop:
   loop_hz: 300
   cycle_time_error_threshold: 0.01
 # Settings for ros_control hardware interface
+# These settings are used by MoveIt so it knows which interface is present
 hardware_interface:
   joints:
     - joint_base
