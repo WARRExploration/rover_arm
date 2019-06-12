@@ -1,4 +1,7 @@
  <launch>
+  <!--  Launches RViz with the ability to control the arm via MoveIt  -->
+  
+  
   <!-- By default, we are not in debug mode -->
   <arg name="debug" default="false" />
 
