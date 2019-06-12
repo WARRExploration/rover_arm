@@ -16,7 +16,7 @@
   
   
   <node name="rover_controller_spawner" pkg="controller_manager" type="spawner"
-        args="arm_controller gripper_controller joint_state_controller"/>
+        args="arm_controller joint_state_controller"/>
     
 
   <include file="$(find rover_sim)/launch/gazebo.launch">

@@ -146,7 +146,7 @@ arm:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-  projection_evaluator: joints(joint_base,joint0)
+  projection_evaluator: joints(joint0,joint1)
   longest_valid_segment_fraction: 0.005
 gripper:
   default_planner_config: None
@@ -174,5 +174,3 @@ gripper:
     - LazyPRMstar
     - SPARS
     - SPARStwo
-  projection_evaluator: joints(joint5,joint6)
-  longest_valid_segment_fraction: 0.005

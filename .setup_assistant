@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: rover_arm
+    relative_path: urdf/testarm.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/testarm.srdf
+  CONFIG:
+    author_name: exploration@warr.de
+    author_email: exploration@warr.de
+    generated_timestamp: 1558386895

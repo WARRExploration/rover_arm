@@ -7,17 +7,15 @@ generic_hw_control_loop:
   loop_hz: 300
   cycle_time_error_threshold: 0.01
 # Settings for ros_control hardware interface
-# These settings are used by MoveIt so it knows which interface is present
 hardware_interface:
   joints:
-    - joint_base
+    - FixedBase
     - joint0
     - joint1
     - joint2
     - joint3
     - joint4
-    - joint5
-    - joint6
+    - joint_hand
   sim_control_mode: 1  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
@@ -30,16 +28,9 @@ controller_list:
     default: True
     type: FollowJointTrajectory
     joints:
-      - joint_base
       - joint0
       - joint1
       - joint2
       - joint3
       - joint4
-  - name: gripper_controller
-    action_ns: follow_joint_trajectory
-    default: True
-    type: FollowJointTrajectory
-    joints:
-      - joint5
-      - joint6
+      - joint_hand
