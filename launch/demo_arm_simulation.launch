@@ -21,6 +21,7 @@
 
   <include file="$(find rover_sim)/launch/gazebo.launch">
     <arg name="model" value="$(arg model)" />
+    <arg name="paused" value="true" />
   </include>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" />

@@ -25,7 +25,7 @@
       </inertial>
     </link>
 
-    <arm parent="base_link" translateX="0.3" translateY="0" translateZ="0.05"/>
+    <arm parent="base_link" translateX="0" translateY="0.3" translateZ="0.15"/>
     
     
     
