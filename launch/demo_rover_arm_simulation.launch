@@ -1,8 +1,8 @@
 <launch>
   <!--  Launches a simulation with a static arm  -->
   
-  <arg name="model_xacro" default="$(find rover_arm)/urdf/testarm.xacro"/>
-  <arg name="model_srdf" default="$(find rover_arm)/config/testarm.srdf"/>
+  <arg name="model_xacro" default="$(find rover_arm)/urdf/rover_with_arm.xacro"/>
+  <arg name="model_srdf" default="$(find rover_arm)/config/rover_with_arm.srdf"/>
   <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/urdf.rviz" />
   
   <!--

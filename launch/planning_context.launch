@@ -4,12 +4,17 @@
 
   <!-- The name of the parameter under which the URDF is loaded -->
   <arg name="robot_description" default="robot_description"/>
+  
+  
+  <arg name="model_xacro" default="$(find rover_arm)/urdf/testarm.xacro"/>
+  <arg name="model_srdf" default="$(find rover_arm)/config/testarm.srdf"/>
+  
 
   <!-- Load universal robot description format (URDF) -->
-  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro  '$(find rover_arm)/urdf/testarm.xacro'"/>
+  <param if="$(arg load_robot_description)" name="$(arg robot_description)" command="xacro  '$(arg model_xacro)'"/>
 
   <!-- The semantic description that corresponds to the URDF -->
-  <param name="$(arg robot_description)_semantic" textfile="$(find rover_arm)/config/testarm.srdf" />
+  <param name="$(arg robot_description)_semantic" textfile="$(arg model_srdf)" />
 
   <!-- Load updated joint limits (override information from URDF) -->
   <group ns="$(arg robot_description)_planning">

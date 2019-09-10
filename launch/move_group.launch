@@ -1,6 +1,12 @@
 <launch>
 
-  <include file="$(find rover_arm)/launch/planning_context.launch" />
+  <arg name="model_xacro" default="$(find rover_arm)/urdf/testarm.xacro"/>
+  <arg name="model_srdf" default="$(find rover_arm)/config/testarm.srdf"/>
+  
+  <include file="$(find rover_arm)/launch/planning_context.launch">
+    <arg name="model_xacro" value="$(arg model_xacro)" />
+    <arg name="model_srdf" value="$(arg model_srdf)" />
+  </include>
 
   <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
