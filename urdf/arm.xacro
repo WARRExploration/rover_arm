@@ -71,7 +71,7 @@
         <joint name="joint0" type="continuous">
             <parent link="${parent}"/>
             <child link="link0"/>
-            <origin rpy="0 0 0" xyz="${translateX} ${translateY} ${translateZ}"/>
+            <origin rpy="-1.6 0 0" xyz="${translateX} ${translateY} ${translateZ}"/>
             <axis xyz="0 0 1"/>
             <limit effort="${lim_eff}" velocity="${lim_vel}"/>
         </joint>
@@ -86,7 +86,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://rover_arm/meshes/Coll_Link0.stl"/>
+                    <mesh filename="package://rover_arm/meshes/Link0.dae"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
@@ -119,7 +119,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://rover_arm/meshes/Coll_Link1.stl"/>
+                    <mesh filename="package://rover_arm/meshes/Link1.dae"/>
                 </geometry>
                 <material name="black"/>
             </visual>
@@ -151,7 +151,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://rover_arm/meshes/Coll_Link2.stl"/>
+                    <mesh filename="package://rover_arm/meshes/Link2.dae"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
@@ -235,7 +235,7 @@
             <visual>
                 <origin rpy="0 0 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://rover_arm/meshes/Coll_Hand.stl"/>
+                    <mesh filename="package://rover_arm/meshes/Hand.dae"/>
                 </geometry>
                 <material name="black"/>
             </visual>
