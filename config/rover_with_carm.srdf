@@ -50,8 +50,8 @@
         <joint name="joint_gripper_b" value="0" />
     </group_state>
     <group_state name="closed" group="gripper">
-        <joint name="joint_gripper_a" value="0.02" />
-        <joint name="joint_gripper_b" value="-0.02" />
+        <joint name="joint_gripper_a" value="0.03" />
+        <joint name="joint_gripper_b" value="0.03" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="hand" parent_link="link3" group="gripper" parent_group="arm" />
@@ -149,6 +149,10 @@
     <disable_collisions link1="-1-1_0" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_0" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_0" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_0" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_0" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_0" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_0" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_0" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_1" link2="-1-1_10" reason="Never" />
     <disable_collisions link1="-1-1_1" link2="-1-1_11" reason="Never" />
@@ -240,6 +244,9 @@
     <disable_collisions link1="-1-1_1" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_1" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_1" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_1" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_1" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_1" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_1" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_10" link2="-1-1_11" reason="Never" />
     <disable_collisions link1="-1-1_10" link2="-1-1_12" reason="Never" />
@@ -330,6 +337,10 @@
     <disable_collisions link1="-1-1_10" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_10" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_10" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_10" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_10" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_10" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_10" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="-1-1_10" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_11" link2="-1-1_12" reason="Never" />
     <disable_collisions link1="-1-1_11" link2="-1-1_13" reason="Never" />
@@ -419,6 +430,9 @@
     <disable_collisions link1="-1-1_11" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_11" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_11" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_11" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_11" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_11" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="-1-1_11" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_12" link2="-1-1_13" reason="Never" />
     <disable_collisions link1="-1-1_12" link2="-1-1_14" reason="Never" />
@@ -509,6 +523,7 @@
     <disable_collisions link1="-1-1_12" link2="link1" reason="Never" />
     <disable_collisions link1="-1-1_12" link2="link2" reason="Never" />
     <disable_collisions link1="-1-1_12" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_12" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_12" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_13" link2="-1-1_14" reason="Never" />
     <disable_collisions link1="-1-1_13" link2="-1-1_15" reason="Never" />
@@ -596,6 +611,11 @@
     <disable_collisions link1="-1-1_13" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_13" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_13" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_13" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_13" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_13" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_13" link2="link_gripper_b" reason="Never" />
+    <disable_collisions link1="-1-1_13" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_13" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_14" link2="-1-1_15" reason="Never" />
     <disable_collisions link1="-1-1_14" link2="-1-1_16" reason="Never" />
@@ -682,6 +702,11 @@
     <disable_collisions link1="-1-1_14" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_14" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_14" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_14" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_14" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_14" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_14" link2="link_gripper_b" reason="Never" />
+    <disable_collisions link1="-1-1_14" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_14" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_15" link2="-1-1_16" reason="Never" />
     <disable_collisions link1="-1-1_15" link2="-1-1_17" reason="Never" />
@@ -767,6 +792,11 @@
     <disable_collisions link1="-1-1_15" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_15" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_15" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_15" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_15" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_15" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_15" link2="link_gripper_b" reason="Never" />
+    <disable_collisions link1="-1-1_15" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_15" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_16" link2="-1-1_17" reason="Never" />
     <disable_collisions link1="-1-1_16" link2="-1-1_18" reason="Never" />
@@ -851,6 +881,10 @@
     <disable_collisions link1="-1-1_16" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_16" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_16" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_16" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_16" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_16" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_16" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="-1-1_16" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_17" link2="-1-1_18" reason="Never" />
     <disable_collisions link1="-1-1_17" link2="-1-1_19" reason="Never" />
@@ -934,6 +968,11 @@
     <disable_collisions link1="-1-1_17" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_17" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_17" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_17" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_17" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_17" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_17" link2="link_gripper_b" reason="Never" />
+    <disable_collisions link1="-1-1_17" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_17" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_18" link2="-1-1_19" reason="Never" />
     <disable_collisions link1="-1-1_18" link2="-1-1_2" reason="Never" />
@@ -1016,6 +1055,9 @@
     <disable_collisions link1="-1-1_18" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_18" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_18" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_18" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_18" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_18" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_18" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_19" link2="-1-1_2" reason="Never" />
     <disable_collisions link1="-1-1_19" link2="-1-1_20" reason="Never" />
@@ -1099,6 +1141,8 @@
     <disable_collisions link1="-1-1_19" link2="link1" reason="Never" />
     <disable_collisions link1="-1-1_19" link2="link2" reason="Never" />
     <disable_collisions link1="-1-1_19" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_19" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_19" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_19" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_2" link2="-1-1_20" reason="Never" />
     <disable_collisions link1="-1-1_2" link2="-1-1_3" reason="Never" />
@@ -1179,6 +1223,8 @@
     <disable_collisions link1="-1-1_2" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_2" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_2" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_2" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_2" link2="link3" reason="Never" />
     <disable_collisions link1="-1-1_2" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_20" link2="-1-1_3" reason="Never" />
     <disable_collisions link1="-1-1_20" link2="-1-1_4" reason="Never" />
@@ -1258,6 +1304,10 @@
     <disable_collisions link1="-1-1_20" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_20" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_20" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_20" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_20" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_20" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_20" link2="link_hand" reason="Never" />
     <disable_collisions link1="-1-1_20" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_3" link2="-1-1_4" reason="Never" />
     <disable_collisions link1="-1-1_3" link2="-1-1_5" reason="Never" />
@@ -1336,6 +1386,8 @@
     <disable_collisions link1="-1-1_3" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_3" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_3" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_3" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_3" link2="link3" reason="Never" />
     <disable_collisions link1="-1-1_3" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_4" link2="-1-1_5" reason="Never" />
     <disable_collisions link1="-1-1_4" link2="-1-1_6" reason="Never" />
@@ -1413,7 +1465,8 @@
     <disable_collisions link1="-1-1_4" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_4" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_4" link2="link1" reason="Never" />
-    <disable_collisions link1="-1-1_4" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_4" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_4" link2="link3" reason="Never" />
     <disable_collisions link1="-1-1_4" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_5" link2="-1-1_6" reason="Never" />
     <disable_collisions link1="-1-1_5" link2="-1-1_7" reason="Never" />
@@ -1490,6 +1543,9 @@
     <disable_collisions link1="-1-1_5" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_5" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_5" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_5" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_5" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_5" link2="link_gripper_a" reason="Never" />
     <disable_collisions link1="-1-1_5" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_6" link2="-1-1_7" reason="Never" />
     <disable_collisions link1="-1-1_6" link2="-1-1_8" reason="Never" />
@@ -1565,6 +1621,10 @@
     <disable_collisions link1="-1-1_6" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_6" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_6" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_6" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_6" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_6" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="-1-1_6" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="-1-1_6" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_7" link2="-1-1_8" reason="Never" />
     <disable_collisions link1="-1-1_7" link2="-1-1_9" reason="Never" />
@@ -1639,6 +1699,9 @@
     <disable_collisions link1="-1-1_7" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_7" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_7" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_7" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_7" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_7" link2="link_gripper_a" reason="Never" />
     <disable_collisions link1="-1-1_7" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_8" link2="-1-1_9" reason="Never" />
     <disable_collisions link1="-1-1_8" link2="-11_0" reason="Never" />
@@ -1712,6 +1775,8 @@
     <disable_collisions link1="-1-1_8" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_8" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_8" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_8" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_8" link2="link_gripper_a" reason="Never" />
     <disable_collisions link1="-1-1_8" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-1-1_9" link2="-11_0" reason="Never" />
     <disable_collisions link1="-1-1_9" link2="-11_1" reason="Never" />
@@ -1784,6 +1849,9 @@
     <disable_collisions link1="-1-1_9" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-1-1_9" link2="link0" reason="Never" />
     <disable_collisions link1="-1-1_9" link2="link1" reason="Never" />
+    <disable_collisions link1="-1-1_9" link2="link2" reason="Never" />
+    <disable_collisions link1="-1-1_9" link2="link3" reason="Never" />
+    <disable_collisions link1="-1-1_9" link2="link_gripper_a" reason="Never" />
     <disable_collisions link1="-1-1_9" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_0" link2="-11_1" reason="Never" />
     <disable_collisions link1="-11_0" link2="-11_10" reason="Never" />
@@ -1854,6 +1922,7 @@
     <disable_collisions link1="-11_0" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_0" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_0" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_0" link2="link1" reason="Never" />
     <disable_collisions link1="-11_0" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_1" link2="-11_10" reason="Never" />
     <disable_collisions link1="-11_1" link2="-11_11" reason="Never" />
@@ -1991,6 +2060,8 @@
     <disable_collisions link1="-11_10" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_10" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_10" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_10" link2="link1" reason="Never" />
+    <disable_collisions link1="-11_10" link2="link2" reason="Never" />
     <disable_collisions link1="-11_10" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_11" link2="-11_12" reason="Never" />
     <disable_collisions link1="-11_11" link2="-11_13" reason="Never" />
@@ -2189,6 +2260,8 @@
     <disable_collisions link1="-11_13" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_13" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_13" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_13" link2="link2" reason="Never" />
+    <disable_collisions link1="-11_13" link2="link3" reason="Never" />
     <disable_collisions link1="-11_13" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_14" link2="-11_15" reason="Never" />
     <disable_collisions link1="-11_14" link2="-11_16" reason="Never" />
@@ -2253,6 +2326,7 @@
     <disable_collisions link1="-11_14" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_14" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_14" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_14" link2="link2" reason="Never" />
     <disable_collisions link1="-11_14" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_15" link2="-11_16" reason="Never" />
     <disable_collisions link1="-11_15" link2="-11_17" reason="Never" />
@@ -2616,6 +2690,7 @@
     <disable_collisions link1="-11_2" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_2" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_2" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_2" link2="link1" reason="Never" />
     <disable_collisions link1="-11_2" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_20" link2="-11_3" reason="Never" />
     <disable_collisions link1="-11_20" link2="-11_4" reason="Never" />
@@ -2673,6 +2748,7 @@
     <disable_collisions link1="-11_20" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_20" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_20" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_20" link2="link1" reason="Never" />
     <disable_collisions link1="-11_20" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_3" link2="-11_4" reason="Never" />
     <disable_collisions link1="-11_3" link2="-11_5" reason="Never" />
@@ -2729,6 +2805,7 @@
     <disable_collisions link1="-11_3" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_3" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_3" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_3" link2="link1" reason="Never" />
     <disable_collisions link1="-11_3" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_4" link2="-11_5" reason="Never" />
     <disable_collisions link1="-11_4" link2="-11_6" reason="Never" />
@@ -2784,6 +2861,7 @@
     <disable_collisions link1="-11_4" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_4" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_4" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_4" link2="link1" reason="Never" />
     <disable_collisions link1="-11_4" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_5" link2="-11_6" reason="Never" />
     <disable_collisions link1="-11_5" link2="-11_7" reason="Never" />
@@ -2891,6 +2969,8 @@
     <disable_collisions link1="-11_6" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_6" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_6" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_6" link2="link2" reason="Never" />
+    <disable_collisions link1="-11_6" link2="link3" reason="Never" />
     <disable_collisions link1="-11_6" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_7" link2="-11_8" reason="Never" />
     <disable_collisions link1="-11_7" link2="-11_9" reason="Never" />
@@ -2943,6 +3023,8 @@
     <disable_collisions link1="-11_7" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_7" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_7" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_7" link2="link2" reason="Never" />
+    <disable_collisions link1="-11_7" link2="link3" reason="Never" />
     <disable_collisions link1="-11_7" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_8" link2="-11_9" reason="Never" />
     <disable_collisions link1="-11_8" link2="1-1_0" reason="Never" />
@@ -2994,6 +3076,8 @@
     <disable_collisions link1="-11_8" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_8" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_8" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_8" link2="link2" reason="Never" />
+    <disable_collisions link1="-11_8" link2="link3" reason="Never" />
     <disable_collisions link1="-11_8" link2="right_rocker" reason="Never" />
     <disable_collisions link1="-11_9" link2="1-1_0" reason="Never" />
     <disable_collisions link1="-11_9" link2="1-1_1" reason="Never" />
@@ -3044,6 +3128,8 @@
     <disable_collisions link1="-11_9" link2="front_right_wheel" reason="Adjacent" />
     <disable_collisions link1="-11_9" link2="left_rocker" reason="Never" />
     <disable_collisions link1="-11_9" link2="link0" reason="Never" />
+    <disable_collisions link1="-11_9" link2="link2" reason="Never" />
+    <disable_collisions link1="-11_9" link2="link3" reason="Never" />
     <disable_collisions link1="-11_9" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_0" link2="1-1_1" reason="Never" />
     <disable_collisions link1="1-1_0" link2="1-1_10" reason="Never" />
@@ -3196,6 +3282,8 @@
     <disable_collisions link1="1-1_10" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_10" link2="link1" reason="Never" />
     <disable_collisions link1="1-1_10" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_10" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_10" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_10" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_11" link2="1-1_12" reason="Never" />
     <disable_collisions link1="1-1_11" link2="1-1_13" reason="Never" />
@@ -3245,6 +3333,8 @@
     <disable_collisions link1="1-1_11" link2="link1" reason="Never" />
     <disable_collisions link1="1-1_11" link2="link2" reason="Never" />
     <disable_collisions link1="1-1_11" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_11" link2="link_gripper_b" reason="Never" />
+    <disable_collisions link1="1-1_11" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_11" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_12" link2="1-1_13" reason="Never" />
     <disable_collisions link1="1-1_12" link2="1-1_14" reason="Never" />
@@ -3292,6 +3382,7 @@
     <disable_collisions link1="1-1_12" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_12" link2="link1" reason="Never" />
     <disable_collisions link1="1-1_12" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_12" link2="link3" reason="Never" />
     <disable_collisions link1="1-1_12" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_13" link2="1-1_14" reason="Never" />
     <disable_collisions link1="1-1_13" link2="1-1_15" reason="Never" />
@@ -3337,6 +3428,7 @@
     <disable_collisions link1="1-1_13" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_13" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_13" link2="link1" reason="Never" />
+    <disable_collisions link1="1-1_13" link2="link2" reason="Never" />
     <disable_collisions link1="1-1_13" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="1-1_13" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_14" link2="1-1_15" reason="Never" />
@@ -3382,7 +3474,9 @@
     <disable_collisions link1="1-1_14" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_14" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_14" link2="link1" reason="Never" />
-    <disable_collisions link1="1-1_14" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="1-1_14" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_14" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_14" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_14" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_15" link2="1-1_16" reason="Never" />
     <disable_collisions link1="1-1_15" link2="1-1_17" reason="Never" />
@@ -3426,7 +3520,9 @@
     <disable_collisions link1="1-1_15" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_15" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_15" link2="link1" reason="Never" />
-    <disable_collisions link1="1-1_15" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="1-1_15" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_15" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_15" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_15" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_16" link2="1-1_17" reason="Never" />
     <disable_collisions link1="1-1_16" link2="1-1_18" reason="Never" />
@@ -3470,7 +3566,8 @@
     <disable_collisions link1="1-1_16" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_16" link2="link1" reason="Never" />
     <disable_collisions link1="1-1_16" link2="link2" reason="Never" />
-    <disable_collisions link1="1-1_16" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="1-1_16" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_16" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_16" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_17" link2="1-1_18" reason="Never" />
     <disable_collisions link1="1-1_17" link2="1-1_19" reason="Never" />
@@ -3512,6 +3609,9 @@
     <disable_collisions link1="1-1_17" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_17" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_17" link2="link1" reason="Never" />
+    <disable_collisions link1="1-1_17" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_17" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_17" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="1-1_17" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_18" link2="1-1_19" reason="Never" />
     <disable_collisions link1="1-1_18" link2="1-1_2" reason="Never" />
@@ -3552,6 +3652,8 @@
     <disable_collisions link1="1-1_18" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_18" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_18" link2="link1" reason="Never" />
+    <disable_collisions link1="1-1_18" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_18" link2="link3" reason="Never" />
     <disable_collisions link1="1-1_18" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_19" link2="1-1_2" reason="Never" />
     <disable_collisions link1="1-1_19" link2="1-1_20" reason="Never" />
@@ -3591,6 +3693,8 @@
     <disable_collisions link1="1-1_19" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_19" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_19" link2="link1" reason="Never" />
+    <disable_collisions link1="1-1_19" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_19" link2="link3" reason="Never" />
     <disable_collisions link1="1-1_19" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_2" link2="1-1_20" reason="Never" />
     <disable_collisions link1="1-1_2" link2="1-1_3" reason="Never" />
@@ -3629,6 +3733,7 @@
     <disable_collisions link1="1-1_2" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_2" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_2" link2="link1" reason="Never" />
+    <disable_collisions link1="1-1_2" link2="link2" reason="Never" />
     <disable_collisions link1="1-1_2" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_20" link2="1-1_3" reason="Never" />
     <disable_collisions link1="1-1_20" link2="1-1_4" reason="Never" />
@@ -3704,6 +3809,7 @@
     <disable_collisions link1="1-1_3" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_3" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_3" link2="link1" reason="Never" />
+    <disable_collisions link1="1-1_3" link2="link3" reason="Never" />
     <disable_collisions link1="1-1_3" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_4" link2="1-1_5" reason="Never" />
     <disable_collisions link1="1-1_4" link2="1-1_6" reason="Never" />
@@ -3739,6 +3845,7 @@
     <disable_collisions link1="1-1_4" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_4" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_4" link2="link1" reason="Never" />
+    <disable_collisions link1="1-1_4" link2="link2" reason="Never" />
     <disable_collisions link1="1-1_4" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_5" link2="1-1_6" reason="Never" />
     <disable_collisions link1="1-1_5" link2="1-1_7" reason="Never" />
@@ -3773,7 +3880,7 @@
     <disable_collisions link1="1-1_5" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_5" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_5" link2="link1" reason="Never" />
-    <disable_collisions link1="1-1_5" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_5" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_5" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_6" link2="1-1_7" reason="Never" />
     <disable_collisions link1="1-1_6" link2="1-1_8" reason="Never" />
@@ -3808,6 +3915,8 @@
     <disable_collisions link1="1-1_6" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_6" link2="link1" reason="Never" />
     <disable_collisions link1="1-1_6" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_6" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_6" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_6" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_7" link2="1-1_8" reason="Never" />
     <disable_collisions link1="1-1_7" link2="1-1_9" reason="Never" />
@@ -3841,6 +3950,10 @@
     <disable_collisions link1="1-1_7" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_7" link2="link1" reason="Never" />
     <disable_collisions link1="1-1_7" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_7" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_7" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="1-1_7" link2="link_gripper_b" reason="Never" />
+    <disable_collisions link1="1-1_7" link2="link_hand" reason="Never" />
     <disable_collisions link1="1-1_7" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_8" link2="1-1_9" reason="Never" />
     <disable_collisions link1="1-1_8" link2="11_0" reason="Never" />
@@ -3872,7 +3985,9 @@
     <disable_collisions link1="1-1_8" link2="left_rocker" reason="Never" />
     <disable_collisions link1="1-1_8" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_8" link2="link1" reason="Never" />
-    <disable_collisions link1="1-1_8" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="1-1_8" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_8" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_8" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="1-1_8" link2="right_rocker" reason="Never" />
     <disable_collisions link1="1-1_9" link2="11_0" reason="Never" />
     <disable_collisions link1="1-1_9" link2="11_1" reason="Never" />
@@ -3904,6 +4019,8 @@
     <disable_collisions link1="1-1_9" link2="link0" reason="Never" />
     <disable_collisions link1="1-1_9" link2="link1" reason="Never" />
     <disable_collisions link1="1-1_9" link2="link2" reason="Never" />
+    <disable_collisions link1="1-1_9" link2="link3" reason="Never" />
+    <disable_collisions link1="1-1_9" link2="link_gripper_a" reason="Never" />
     <disable_collisions link1="1-1_9" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_0" link2="11_1" reason="Never" />
     <disable_collisions link1="11_0" link2="11_10" reason="Never" />
@@ -3932,6 +4049,8 @@
     <disable_collisions link1="11_0" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_0" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_0" link2="link0" reason="Never" />
+    <disable_collisions link1="11_0" link2="link1" reason="Never" />
+    <disable_collisions link1="11_0" link2="link_hand" reason="Never" />
     <disable_collisions link1="11_0" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_1" link2="11_10" reason="Never" />
     <disable_collisions link1="11_1" link2="11_11" reason="Never" />
@@ -3959,6 +4078,9 @@
     <disable_collisions link1="11_1" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_1" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_1" link2="link0" reason="Never" />
+    <disable_collisions link1="11_1" link2="link1" reason="Never" />
+    <disable_collisions link1="11_1" link2="link_gripper_b" reason="Never" />
+    <disable_collisions link1="11_1" link2="link_hand" reason="Never" />
     <disable_collisions link1="11_1" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_10" link2="11_11" reason="Never" />
     <disable_collisions link1="11_10" link2="11_12" reason="Never" />
@@ -3985,6 +4107,7 @@
     <disable_collisions link1="11_10" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_10" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_10" link2="link0" reason="Never" />
+    <disable_collisions link1="11_10" link2="link1" reason="Never" />
     <disable_collisions link1="11_10" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_11" link2="11_12" reason="Never" />
     <disable_collisions link1="11_11" link2="11_13" reason="Never" />
@@ -4010,6 +4133,7 @@
     <disable_collisions link1="11_11" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_11" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_11" link2="link0" reason="Never" />
+    <disable_collisions link1="11_11" link2="link2" reason="Never" />
     <disable_collisions link1="11_11" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_12" link2="11_13" reason="Never" />
     <disable_collisions link1="11_12" link2="11_14" reason="Never" />
@@ -4034,6 +4158,8 @@
     <disable_collisions link1="11_12" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_12" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_12" link2="link0" reason="Never" />
+    <disable_collisions link1="11_12" link2="link1" reason="Never" />
+    <disable_collisions link1="11_12" link2="link2" reason="Never" />
     <disable_collisions link1="11_12" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_13" link2="11_14" reason="Never" />
     <disable_collisions link1="11_13" link2="11_15" reason="Never" />
@@ -4057,6 +4183,7 @@
     <disable_collisions link1="11_13" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_13" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_13" link2="link0" reason="Never" />
+    <disable_collisions link1="11_13" link2="link1" reason="Never" />
     <disable_collisions link1="11_13" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_14" link2="11_15" reason="Never" />
     <disable_collisions link1="11_14" link2="11_16" reason="Never" />
@@ -4079,6 +4206,7 @@
     <disable_collisions link1="11_14" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_14" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_14" link2="link0" reason="Never" />
+    <disable_collisions link1="11_14" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="11_14" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_15" link2="11_16" reason="Never" />
     <disable_collisions link1="11_15" link2="11_17" reason="Never" />
@@ -4157,6 +4285,7 @@
     <disable_collisions link1="11_18" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_18" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_18" link2="link0" reason="Never" />
+    <disable_collisions link1="11_18" link2="link2" reason="Never" />
     <disable_collisions link1="11_18" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_19" link2="11_2" reason="Never" />
     <disable_collisions link1="11_19" link2="11_20" reason="Never" />
@@ -4174,6 +4303,7 @@
     <disable_collisions link1="11_19" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_19" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_19" link2="link0" reason="Never" />
+    <disable_collisions link1="11_19" link2="link1" reason="Never" />
     <disable_collisions link1="11_19" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_2" link2="11_20" reason="Never" />
     <disable_collisions link1="11_2" link2="11_3" reason="Never" />
@@ -4190,6 +4320,8 @@
     <disable_collisions link1="11_2" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_2" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_2" link2="link0" reason="Never" />
+    <disable_collisions link1="11_2" link2="link2" reason="Never" />
+    <disable_collisions link1="11_2" link2="link3" reason="Never" />
     <disable_collisions link1="11_2" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_20" link2="11_3" reason="Never" />
     <disable_collisions link1="11_20" link2="11_4" reason="Never" />
@@ -4205,6 +4337,8 @@
     <disable_collisions link1="11_20" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_20" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_20" link2="link0" reason="Never" />
+    <disable_collisions link1="11_20" link2="link1" reason="Never" />
+    <disable_collisions link1="11_20" link2="link_hand" reason="Never" />
     <disable_collisions link1="11_20" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_3" link2="11_4" reason="Never" />
     <disable_collisions link1="11_3" link2="11_5" reason="Never" />
@@ -4255,6 +4389,7 @@
     <disable_collisions link1="11_6" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_6" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_6" link2="link0" reason="Never" />
+    <disable_collisions link1="11_6" link2="link1" reason="Never" />
     <disable_collisions link1="11_6" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_7" link2="11_8" reason="Never" />
     <disable_collisions link1="11_7" link2="11_9" reason="Never" />
@@ -4265,6 +4400,8 @@
     <disable_collisions link1="11_7" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_7" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_7" link2="link0" reason="Never" />
+    <disable_collisions link1="11_7" link2="link1" reason="Never" />
+    <disable_collisions link1="11_7" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="11_7" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_8" link2="11_9" reason="Never" />
     <disable_collisions link1="11_8" link2="back_left_wheel" reason="Never" />
@@ -4274,6 +4411,7 @@
     <disable_collisions link1="11_8" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_8" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_8" link2="link0" reason="Never" />
+    <disable_collisions link1="11_8" link2="link1" reason="Never" />
     <disable_collisions link1="11_8" link2="right_rocker" reason="Never" />
     <disable_collisions link1="11_9" link2="back_left_wheel" reason="Never" />
     <disable_collisions link1="11_9" link2="back_right_wheel" reason="Never" />
@@ -4282,6 +4420,7 @@
     <disable_collisions link1="11_9" link2="front_right_wheel" reason="Never" />
     <disable_collisions link1="11_9" link2="left_rocker" reason="Never" />
     <disable_collisions link1="11_9" link2="link0" reason="Never" />
+    <disable_collisions link1="11_9" link2="link1" reason="Never" />
     <disable_collisions link1="11_9" link2="right_rocker" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="back_right_wheel" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="chassis" reason="Never" />
@@ -4290,6 +4429,7 @@
     <disable_collisions link1="back_left_wheel" link2="left_rocker" reason="Adjacent" />
     <disable_collisions link1="back_left_wheel" link2="link0" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="link1" reason="Never" />
+    <disable_collisions link1="back_left_wheel" link2="link3" reason="Never" />
     <disable_collisions link1="back_left_wheel" link2="right_rocker" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="chassis" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="front_left_wheel" reason="Never" />
@@ -4297,6 +4437,8 @@
     <disable_collisions link1="back_right_wheel" link2="left_rocker" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="link0" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="link1" reason="Never" />
+    <disable_collisions link1="back_right_wheel" link2="link2" reason="Never" />
+    <disable_collisions link1="back_right_wheel" link2="link3" reason="Never" />
     <disable_collisions link1="back_right_wheel" link2="right_rocker" reason="Adjacent" />
     <disable_collisions link1="chassis" link2="front_left_wheel" reason="Never" />
     <disable_collisions link1="chassis" link2="front_right_wheel" reason="Never" />
@@ -4315,13 +4457,17 @@
     <disable_collisions link1="link0" link2="link1" reason="Adjacent" />
     <disable_collisions link1="link0" link2="link2" reason="Never" />
     <disable_collisions link1="link0" link2="link3" reason="Never" />
+    <disable_collisions link1="link0" link2="link_gripper_a" reason="Never" />
     <disable_collisions link1="link0" link2="link_hand" reason="Never" />
     <disable_collisions link1="link0" link2="right_rocker" reason="Never" />
     <disable_collisions link1="link1" link2="link2" reason="Adjacent" />
     <disable_collisions link1="link2" link2="link3" reason="Adjacent" />
+    <disable_collisions link1="link2" link2="link_gripper_a" reason="Never" />
+    <disable_collisions link1="link2" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="link3" link2="link_gripper_a" reason="Never" />
     <disable_collisions link1="link3" link2="link_gripper_b" reason="Never" />
     <disable_collisions link1="link3" link2="link_hand" reason="Adjacent" />
+    <disable_collisions link1="link_gripper_a" link2="link_gripper_b" reason="User" />
     <disable_collisions link1="link_gripper_a" link2="link_hand" reason="Adjacent" />
     <disable_collisions link1="link_gripper_b" link2="link_hand" reason="Adjacent" />
 </robot>

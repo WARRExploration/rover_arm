@@ -1,7 +1,7 @@
 <launch>
   <!--  Launches a simulation with a static arm  -->
   
-  <arg name="model" default="testarm"/>
+  <arg name="model" default="rover_with_carm"/>
   
   <arg name="model_xacro" default="$(find rover_arm)/urdf/$(arg model).xacro"/>
   <arg name="model_srdf" default="$(find rover_arm)/config/$(arg model).srdf"/>
@@ -18,8 +18,16 @@
             file="$(find rover_arm)/config/arm_control.yaml"/>
   
   
+    <rosparam command="load" file="$(find rover_control)/config/diffdrive.yaml" ns="rover_diff_drive_controller" />
+    <rosparam command="load" file="$(find rover_sim)/config/rocker.yaml" />
+  
+  
   <node name="rover_controller_spawner" pkg="controller_manager" type="spawner"
-        args="arm_controller gripper_controller joint_state_controller"/>
+        args="arm_controller gripper_controller joint_state_controller
+                rover_diff_drive_controller"/>
+  
+  
+    <remap from="/cmd_vel" to="/rover_diff_drive_controller/cmd_vel"/>
     
 
   <include file="$(find rover_sim)/launch/gazebo.launch">

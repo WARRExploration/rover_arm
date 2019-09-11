@@ -1,7 +1,7 @@
  <launch>
   <!--  Launches RViz with the ability to control the arm via MoveIt  -->
   
-  <arg name="model" default="testarm"/>
+  <arg name="model" default="rover_with_carm"/>
   
   <arg name="model_xacro" default="$(find rover_arm)/urdf/$(arg model).xacro"/>
   <arg name="model_srdf" default="$(find rover_arm)/config/$(arg model).srdf"/>
