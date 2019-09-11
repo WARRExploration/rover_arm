@@ -1,10 +1,10 @@
 moveit_setup_assistant_config:
   URDF:
     package: rover_arm
-    relative_path: urdf/testarm.xacro
+    relative_path: urdf/rover_with_carm.xacro
     xacro_args: ""
   SRDF:
-    relative_path: config/testarm.srdf
+    relative_path: config/rover_with_carm.srdf
   CONFIG:
     author_name: exploration@warr.de
     author_email: exploration@warr.de

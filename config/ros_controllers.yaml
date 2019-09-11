@@ -9,14 +9,21 @@ generic_hw_control_loop:
 # Settings for ros_control hardware interface
 hardware_interface:
   joints:
-    - FixedBase
+    - virtual_world_joint
     - joint0
     - joint1
     - joint2
     - joint3
-    - joint4
     - joint_hand
-  sim_control_mode: 1  # 0: position, 1: velocity
+    - joint_gripper_a
+    - joint_gripper_b
+    - left_rocker_joint
+    - back_left_wheel_joint
+    - front_left_wheel_joint
+    - right_rocker_joint
+    - back_right_wheel_joint
+    - front_right_wheel_joint
+  sim_control_mode: 0  # 0: position, 1: velocity
 # Publish all joint states
 # Creates the /joint_states topic necessary in ROS
 joint_state_controller:
@@ -24,13 +31,68 @@ joint_state_controller:
   publish_rate: 50
 controller_list:
   - name: arm_controller
-    action_ns: follow_joint_trajectory
+    action_ns: follow_joint_position
     default: True
-    type: FollowJointTrajectory
+    type: position_controllers/JointTrajectoryController
     joints:
       - joint0
       - joint1
       - joint2
       - joint3
-      - joint4
       - joint_hand
+  - name: gripper_controller
+    action_ns: follow_joint_position2
+    type: position_controllers/JointTrajectoryController
+    joints:
+      - joint_gripper_a
+      - joint_gripper_b
+arm_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - joint0
+    - joint1
+    - joint2
+    - joint3
+    - joint_hand
+  #gains:
+    #joint0:
+      #p: 100
+      #d: 1
+      #i: 1
+      #i_clamp: 1
+    #joint1:
+      #p: 100
+      #d: 1
+      #i: 1
+      #i_clamp: 1
+    #joint2:
+      #p: 100
+      #d: 1
+      #i: 1
+      #i_clamp: 1
+    #joint3:
+      #p: 100
+      #d: 1
+      #i: 1
+      #i_clamp: 1
+    #joint_hand:
+      #p: 100
+      #d: 1
+      #i: 1
+      #i_clamp: 1
+gripper_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - joint_gripper_a
+    - joint_gripper_b
+  #gains:
+    #joint_gripper_a:
+      #p: 100
+      #d: 1
+      #i: 1
+      #i_clamp: 1
+    #joint_gripper_b:
+      #p: 100
+      #d: 1
+      #i: 1
+      #i_clamp: 1

@@ -1,0 +1,365 @@
+<?xml version="1.0" ?>
+<robot name="arm" 
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- com = center of mass -->
+    <xacro:property name="link0_com" value="0 0.1 0.05" />
+    <xacro:property name="link0_mass" value="3" />
+    
+    <xacro:property name="link1_com" value="0 0.15 0" />
+    <xacro:property name="link1_mass" value="5" />
+    
+    <xacro:property name="link2_com" value="0 0.1 0.1" />
+    <xacro:property name="link2_mass" value="2" />
+    
+    
+    <xacro:property name="link3_com" value="0 0.02 0" />
+    <xacro:property name="link3_mass" value="0.2" />
+    
+    
+    <xacro:property name="link4_com" value="-0.02 0 0" />
+    <xacro:property name="link4_mass" value="0.3" />
+    
+    <xacro:property name="link_hand_com" value="0 0.05 0.02" />
+    <xacro:property name="link_hand_mass" value="1" />
+    
+    
+    <xacro:property name="link0_len" value="0.1" />
+    <xacro:property name="link0_rad" value="0.1" />
+    <xacro:property name="link1_len" value="0.6" />
+    <xacro:property name="link1_width" value="0.05" />
+    <xacro:property name="link2_len" value="0.4" />
+    <xacro:property name="link2_width" value="0.05" />
+    <xacro:property name="link3_len" value="0.2" />
+    <xacro:property name="link3_width" value="0.05" />
+    <xacro:property name="link4_len" value="0.05" />
+    <xacro:property name="link4_width" value="0.05" />
+    <xacro:property name="link5_len" value="0.05" />
+    <xacro:property name="link5_width" value="0.05" />
+    <xacro:property name="gripper_len" value="0.07" />
+    <xacro:property name="gripper_rad" value="0.01" />
+    <xacro:property name="offset_gripper" value="0.01" />
+    
+    
+    <xacro:property name="lim_eff" value="3000" />
+    <xacro:property name="lim_low_1" value="${-pi * 1/3}" />
+    <xacro:property name="lim_up_1" value="${pi * 2/3}" />
+    <xacro:property name="lim_low_2" value="-2.9698" />
+    <xacro:property name="lim_up_2" value="1.18" />
+    <xacro:property name="lim_low_4" value="${-pi/2}" />
+    <xacro:property name="lim_up_4" value="${pi/2}" />
+    <xacro:property name="lim_vel" value="1.571" />
+    
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+    <xacro:property name="M_PI_2" value="1.570796327" />
+
+    <xacro:macro name="box_inertia" params="m x y z">
+        <inertia ixx="${0.0833333 * m * (y*y + z*z)}" ixy="0.0" ixz="0.0" iyy="${0.0833333 * m * (x*x + z*z)}" iyz="0.0" izz="${0.0833333 * m * (x*x + y*y)}" />
+    </xacro:macro>
+
+    <xacro:macro name="cylinder_inertia" params="m r h">
+        <inertia ixx="${ m * ( 3 * r*r + h*h ) / 12}" ixy="0" ixz="0" iyy="${ m * ( 3 * r*r + h*h ) / 12}" iyz="0" izz="${ m * r / 2}" />
+    </xacro:macro>
+
+    <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
+    <material name="orange">
+        <color rgba="1.0 0.4 0.0 1.0"/>
+    </material>
+
+    <xacro:macro name="arm" params="parent translateX translateY translateZ">
+        
+        <!--  Link 0: rotating base  -->
+
+        <joint name="joint0" type="continuous">
+            <parent link="${parent}"/>
+            <child link="link0"/>
+            <origin rpy="${-M_PI_2} 0 0" xyz="${translateX} ${translateY} ${translateZ}"/>
+            <axis xyz="0 0 1"/>
+            <limit effort="${lim_eff}" velocity="${lim_vel}"/>
+        </joint>
+        
+        <link name="link0">
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Link0.dae"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Link0.dae"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${link0_com}"/>
+                <mass value="${link0_mass}"/>
+                <cylinder_inertia m="${link0_mass}" r="${link0_rad}" h="0.5" />
+            </inertial>
+        </link>
+        
+        
+        <!--  Link 1: up/down arm segment 1  -->
+        
+        <joint name="joint1" type="continuous">
+            <parent link="link0"/>
+            <child link="link1"/>
+                <origin rpy="0 0 0" xyz="0 0 0.037"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="${lim_eff}" velocity="${lim_vel}"/><!--
+            <limit effort="${lim_eff}" lower="${lim_low_1}" upper="${lim_up_1}" velocity="${lim_vel}"/>-->
+        </joint>
+        
+        <link name="link1">
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Link1.dae"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Link1.dae"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${link1_com}"/>
+                <mass value="${link1_mass}"/>
+                <box_inertia m="${link1_mass}" x="${link1_width}" y="${link1_width}" z="${link1_len}" />
+            </inertial>
+        </link>
+        
+        
+        <!--  Link 2: up/down arm segment 2  -->
+
+        <joint name="joint2" type="revolute">
+            <parent link="link1"/>
+            <child link="link2"/>
+                <origin rpy="0 0 0" xyz="0 0.381 0.035"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="${lim_eff}" lower="${lim_low_2}" upper="${lim_up_2}" velocity="${lim_vel}"/>
+        </joint>
+
+        <link name="link2">
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Link2.dae"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Link2.dae"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${link2_com}"/>
+                <mass value="${link2_mass}"/>
+                <box_inertia m="${link2_mass}" x="${link2_width}" y="${link2_width}" z="${link2_len}" />
+            </inertial>
+        </link>
+        
+        
+        <!--  Link 3: swivel up/down  -->
+
+        <joint name="joint3" type="continuous">
+            <parent link="link2"/>
+            <child link="link3"/>
+                <origin rpy="0 0 0" xyz="0 0.182 0"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="${lim_eff}" velocity="${lim_vel}"/>
+        </joint>
+
+        <link name="link3">
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Link3.dae"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${link3_com}"/>
+                <mass value="${link3_mass}"/>
+                <box_inertia m="${link3_mass}" x="${link3_width}" y="${link3_width}" z="${link3_len}" />
+            </inertial>
+        </link>
+        
+        
+        <!--  Hand and swivel forward  -->
+
+        <joint name="joint_hand" type="continuous">
+            <parent link="link3"/>
+            <child link="link_hand"/>
+                <origin rpy="0 0 0" xyz="0 0.043 0"/>
+            <axis xyz="0 1 0"/>
+            <limit effort="${lim_eff}" velocity="${lim_vel}"/>
+        </joint>
+
+        <link name="link_hand">
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Hand.dae"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Hand.dae"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${link_hand_com}"/>
+                <mass value="${link_hand_mass}"/>
+                <box_inertia m="${link_hand_mass}" x="${link5_width}" y="${link5_width}" z="${link5_len}" />
+            </inertial>
+        </link>
+        
+        
+        
+        <!--   Gripper sides A and B   -->
+        
+        <joint name="joint_gripper_a" type="prismatic">
+            <parent link="link_hand"/>
+            <child link="link_gripper_a"/>
+                <origin rpy="0 0 0" xyz="-0.043 0.032 0"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="${lim_eff}" lower="${lim_low_2}" upper="${lim_up_2}" velocity="${lim_vel}"/>
+        </joint>
+        
+        <link name="link_gripper_a">
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Gripper.dae"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Gripper.dae"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${link_hand_com}"/>
+                <mass value="${link_hand_mass}"/>
+                <box_inertia m="${link_hand_mass}" x="${link5_width}" y="${link5_width}" z="${link5_len}" />
+            </inertial>
+        </link>
+        
+        
+        <joint name="joint_gripper_b" type="prismatic">
+            <parent link="link_hand"/>
+            <child link="link_gripper_b"/>
+                <origin rpy="0 0 0" xyz="0.043 0.032 0"/>
+            <axis xyz="1 0 0"/>
+            <limit effort="${lim_eff}" lower="${lim_low_2}" upper="${lim_up_2}" velocity="${lim_vel}"/>
+        </joint>
+        
+        <link name="link_gripper_b">
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Gripper.dae"/>
+                </geometry>
+            </collision>
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://rover_arm/carm-meshes/Gripper.dae"/>
+                </geometry>
+                <material name="black"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="${link_hand_com}"/>
+                <mass value="${link_hand_mass}"/>
+                <box_inertia m="${link_hand_mass}" x="${link5_width}" y="${link5_width}" z="${link5_len}" />
+            </inertial>
+        </link>
+
+        
+        
+        <!-- Transmission is important to link the joint and the controller -->
+
+        <transmission name="joint0_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="joint0">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="joint0_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="joint1_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="joint1">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="joint1_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="joint2_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="joint2">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="joint2_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="joint3_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="joint3">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="joint3_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="joint_hand_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="joint_hand">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="joint_hand_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="joint_gripper_a_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="joint_gripper_a">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="joint_gripper_a_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        
+        <transmission name="joint_gripper_b_trans">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="joint_gripper_b">
+                <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="joint_gripper_b_motor">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+        
+    </xacro:macro>
+
+</robot>
