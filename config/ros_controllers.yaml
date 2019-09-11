@@ -31,9 +31,9 @@ joint_state_controller:
   publish_rate: 50
 controller_list:
   - name: arm_controller
-    action_ns: follow_joint_position
+    action_ns: follow_joint_trajectory
     default: True
-    type: position_controllers/JointTrajectoryController
+    type: FollowJointTrajectory
     joints:
       - joint0
       - joint1
@@ -41,8 +41,8 @@ controller_list:
       - joint3
       - joint_hand
   - name: gripper_controller
-    action_ns: follow_joint_position2
-    type: position_controllers/JointTrajectoryController
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
     joints:
       - joint_gripper_a
       - joint_gripper_b
@@ -84,7 +84,7 @@ gripper_controller:
   type: position_controllers/JointTrajectoryController
   joints:
     - joint_gripper_a
-    - joint_gripper_b
+   # - joint_gripper_b
   #gains:
     #joint_gripper_a:
       #p: 100
